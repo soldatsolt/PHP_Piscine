@@ -6,7 +6,7 @@
 <!-- By: kmills <marvin@42.fr>                      +#+  +:+       +#+       -->
 <!--                                              +#+#+#+#+#+   +#+          -->
 <!-- Created: 2019/10/05 06:59:10 by kmills            #+#    #+#            -->
-<!-- Updated: 2019/10/05 06:59:16 by kmills           ###   ########.fr      -->
+<!-- Updated: 2019/10/07 18:53:15 by kmills           ###   ########.fr      -->
 <!--                                                                         -->
 <!-- *********************************************************************** -->
 
@@ -32,6 +32,9 @@ table {
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   background:  #DCECF8;
   color: #0C213B;
+  width: 100%;
+  resize: both;
+  overflow: auto;
 }
 .big
 {
@@ -65,12 +68,27 @@ td {
   text-align: center;
   height: 43px;
 }
+p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+h2 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
 .second {
-  font-size: 1em;
+  font-size: 14px;
   font-weight: bold;
   text-align: center;
   height: 86px;
 }
+/* tr, td{
+	width: 100%;
+  resize: both;
+  overflow: auto;
+} */
 .elem
 {
 	font-family: Arial, Helvetica, sans-serifl;
@@ -82,7 +100,7 @@ td {
 	</head>
 	<body bgcolor=#F0FFFF>
 		<img src="http://himprom.ua/photos/news/main/0/47w695h275.jpg"/>
-		<table  style="width: 1100px">
+		<table contenteditable = "true" style="width: 1100px">
 			<colgroup>
 				<col span="1" style="width: 100px">
 				<col span="1" style="width: 100px">
@@ -119,149 +137,149 @@ td {
 				  <td></td>
 				  <td></td>
 				  <td></td>
-				  <td bgcolor="yellow" align="center"><p style="text-align:left;">1<span style="float:right;">1.008</span></p><h2>H</h2></td>
-				  <td bgcolor="slateblue" align="center"><p style="text-align:left;">2<span style="float:right;">4.003</span></p><h2>He</h2></td>
+				  <td bgcolor="yellow" align="center"><p style="text-align:right;">1.008</p><h2>H</h2><p style="text-align:left;">1</p></td>
+				  <td bgcolor="slateblue" align="center"><p style="text-align:right;">4.003</p><h2>He</h2><p style="text-align:left;">2</p></td>
 				  <td colspan="2" rowspan="3"></td>
 				</tr>
 				<tr>
 				  <td class="first">2</td>
-				  <td bgcolor="#32CD32" align="center"><p  style="text-align:left;">3<span style="float:right;">6.941</span></p><h2>Li</h2></td>
-				  <td bgcolor="yellow" align="center"><p style="text-align:left;">4<span style="float:right;">9.0122</span></p><h2>Be</h2></td>
-				  <td bgcolor="yellow" align="center"><p style="text-align:left;">5<span style="float:right;">10.811</span></p><h2>B</h2></td>
-				  <td bgcolor="yellow" align="center"><p style="text-align:left;">6<span style="float:right;">12.011</span></p><h2>C</h2></td>
-				  <td bgcolor="yellow" align="center"><p style="text-align:left;">7<span style="float:right;">14.007</span></p><h2>N</h2></td>
-				  <td bgcolor="yellow" align="center"><p style="text-align:left;">8<span style="float:right;">15.999</span></p><h2>O</h2></td>
-				  <td bgcolor="yellow" align="center"><p style="text-align:left;">9<span style="float:right;">18.998</span></p><h2>F</h2></td>
-				  <td bgcolor="slateblue" align="center"><p style="text-align:left;">10<span style="float:right;">20.179</span></p><h2>Ne</h2></td>
+				  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">6.941</p><h2>Li</h2><p style="text-align:left;">3</p></td>
+				  <td bgcolor="yellow" align="center"><p style="text-align:right;">9.0122</p><h2>Be</h2><p style="text-align:left;">4</p></td>
+				  <td bgcolor="yellow" align="center"><p style="text-align:right;">10.811</p><h2>B</h2><p style="text-align:left;">5</p></td>
+				  <td bgcolor="yellow" align="center"><p style="text-align:right;">12.011</p><h2>C</h2><p style="text-align:left;">6</p></td>
+				  <td bgcolor="yellow" align="center"><p style="text-align:right;">14.007</p><h2>N</h2><p style="text-align:left;">7</p></td>
+				  <td bgcolor="yellow" align="center"><p style="text-align:right;">15.999</p><h2>O</h2><p style="text-align:left;">8</p></td>
+				  <td bgcolor="yellow" align="center"><p style="text-align:right;">18.998</p><h2>F</h2><p style="text-align:left;">9</p></td>
+				  <td bgcolor="slateblue" align="center"><p style="text-align:right;">20.179</p><h2>Ne</h2><p style="text-align:left;">10</p></td>
 				</tr>
 				<tr>
 				  <td class="first">3</td>
 				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">11<span style="float:right;">22.99</span></p><h2>Na</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">12<span style="float:right;">24.305</span></p><h2>Mg</h2></td>
-				  <td bgcolor="hotpink" align="center"><p style="text-align:left;">13<span style="float:right;">26.981</span></p><h2>Al</h2></td>
-				  <td bgcolor="yellow" align="center"><p style="text-align:left;">14<span style="float:right;">28.086</span></p><h2>Si</h2></td>
-				  <td bgcolor="yellow" align="center"><p style="text-align:left;">15<span style="float:right;">30.974</span></p><h2>P</h2></td>
-				  <td bgcolor="yellow" align="center"><p style="text-align:left;">16<span style="float:right;">32.066</span></p><h2>S</h2></td>
-				  <td bgcolor="yellow" align="center"><p style="text-align:left;">17<span style="float:right;">35.453</span></p><h2>Cl</h2></td>
-				  <td bgcolor="slateblue" align="center"><p style="text-align:left;">18<span style="float:right;">39.948</span></p><h2>Ar</h2></td>
+				  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">24.305</p><h2>Mg</h2><p style="text-align:left;">12</p></td>
+				  <td bgcolor="hotpink" align="center"><p style="text-align:right;">26.981</p><h2>Al</h2><p style="text-align:left;">13</p></td>
+				  <td bgcolor="yellow" align="center"><p style="text-align:right;">28.086</p><h2>Si</h2><p style="text-align:left;">14</p></td>
+				  <td bgcolor="yellow" align="center"><p style="text-align:right;">30.974</p><h2>P</h2><p style="text-align:left;">15</p></td>
+				  <td bgcolor="yellow" align="center"><p style="text-align:right;">32.066</p><h2>S</h2><p style="text-align:left;">16</p></td>
+				  <td bgcolor="yellow" align="center"><p style="text-align:right;">35.453</p><h2>Cl</h2><p style="text-align:left;">17</p></td>
+				  <td bgcolor="slateblue" align="center"><p style="text-align:right;">39.948</p><h2>Ar</h2><p style="text-align:left;">18</p></td>
 				  </tr>
 				<tr>
 				  <td rowspan="2" class="second">4</td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">19<span style="float:right;">39.098</span></p><h2>K</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">20<span style="float:right;">40.08</span></p><h2>Ca</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">21<span style="float:right;">44.956</span></p><h2>Sc</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">22<span style="float:right;">47.90</span></p><h2>Ti</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">23<span style="float:right;">50.941</span></p><h2>V</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">24<span style="float:right;">51.996</span></p><h2>Cr</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">25<span style="float:right;">54.938</span></p><h2>Mn</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">26<span style="float:right;">55.847</span></p><h2>Fe</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">27<span style="float:right;">58.933</span></p><h2>Co</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">28<span style="float:right;">58.70</span></p><h2>Ni</h2></td>
+				  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">39.098</p><h2>K</h2><p style="text-align:left;">19</p></td>
+				  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">40.08</p><h2>Ca</h2><p style="text-align:left;">20</p></td>
+				  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">44.956</p><h2>Sc</h2><p style="text-align:left;">21</p></td>
+				  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">47.90</p><h2>Ti</h2><p style="text-align:left;">22</p></td>
+				  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">50.941</p><h2>V</h2><p style="text-align:left;">23</p></td>
+				  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">51.996</p><h2>Cr</h2><p style="text-align:left;">24</p></td>
+				  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">54.938</p><h2>Mn</h2><p style="text-align:left;">25</p></td>
+				  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">55.847</p><h2>Fe</h2><p style="text-align:left;">26</p></td>
+				  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">58.933</p><h2>Co</h2><p style="text-align:left;">27</p></td>
+				  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">58.70</p><h2>Ni</h2><p style="text-align:left;">28</p></td>
 				  </tr>
 				<tr>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">29<span style="float:right;">63.546</span></p><h2>Cu</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">30<span style="float:right;">65.39</span></p><h2>Zn</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">31<span style="float:right;">69.72</span></p><h2>Ga</h2></td>
-				  <td bgcolor="hotpink" align="center"><p style="text-align:left;">32<span style="float:right;">72.59</span></p><h2>Ge</h2></td>
-				  <td bgcolor="yellow" align="center"><p style="text-align:left;">33<span style="float:right;">74.992</span></p><h2>As</h2></td>
-				  <td bgcolor="yellow" align="center"><p style="text-align:left;">34<span style="float:right;">78.96</span></p><h2>Se</h2></td>
-				  <td bgcolor="yellow" align="center"><p style="text-align:left;">35<span style="float:right;">79.904</span></p><h2>Br</h2></td>
-				  <td bgcolor="slateblue" align="center"><p style="text-align:left;">36<span style="float:right;">83.80</span></p><h2>Kr</h2></td>
+					<td bgcolor="#32CD32" align="center"><p style="text-align:right;">63.546</p><h2>Cu</h2><p style="text-align:left;">29</p></td>
+					<td bgcolor="#32CD32" align="center"><p style="text-align:right;">65.39</p><h2>Zn</h2><p style="text-align:left;">30</p></td>
+					<td bgcolor="#32CD32" align="center"><p style="text-align:right;">69.72</p><h2>Ga</h2><p style="text-align:left;">31</p></td>
+					<td bgcolor="hotpink" align="center"><p style="text-align:right;">72.59</p><h2>Ge</h2><p style="text-align:left;">32</p></td>
+					<td bgcolor="yellow" align="center"><p style="text-align:right;">74.992</p><h2>As</h2><p style="text-align:left;">33</p></td>
+					<td bgcolor="yellow" align="center"><p style="text-align:right;">78.96</p><h2>Se</h2><p style="text-align:left;">34</p></td>
+					<td bgcolor="yellow" align="center"><p style="text-align:right;">79.904</p><h2>Br</h2><p style="text-align:left;">35</p></td>
+					<td bgcolor="slateblue" align="center"><p style="text-align:right;">83.80</p><h2>Kr</h2><p style="text-align:left;">36</p></td>
 				  </tr>
 				<tr>
 				  <td rowspan="2" class="second">5</td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">37<span style="float:right;">85.468</span></p><h2>Rb</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">38<span style="float:right;">87.62</span></p><h2>Sr</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">39<span style="float:right;">88.906</span></p><h2>Y</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">40<span style="float:right;">91.22</span></p><h2>Zr</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">41<span style="float:right;">92.906</span></p><h2>Nb</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">42<span style="float:right;">95.94</span></p><h2>Mo</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">43<span style="float:right;">97.91</span></p><h2>Tc</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">44<span style="float:right;">101.07</span></p><h2>Ru</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">45<span style="float:right;">102.906</span></p><h2>Rh</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">46<span style="float:right;">106.4</span></p><h2>Pd</h2></td>
+				  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">85.468</p><h2>Rb</h2><p style="text-align:left;">37</p></td>
+				  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">87.62</p><h2>Sr</h2><p style="text-align:left;">38</p></td>
+				  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">88.906</p><h2>Y</h2><p style="text-align:left;">39</p></td>
+				  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">91.22</p><h2>Zr</h2><p style="text-align:left;">40</p></td>
+				  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">92.906</p><h2>Nb</h2><p style="text-align:left;">41</p></td>
+				  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">95.94</p><h2>Mo</h2><p style="text-align:left;">42</p></td>
+				  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">97.91</p><h2>Tc</h2><p style="text-align:left;">43</p></td>
+				  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">101.07</p><h2>Ru</h2><p style="text-align:left;">44</p></td>
+				  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">102.906</p><h2>Rh</h2><p style="text-align:left;">45</p></td>
+				  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">106.4</p><h2>Pd</h2><p style="text-align:left;">46</p></td>
 				  </tr>
 				<tr>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">47<span style="float:right;">107.868</span></p><h2>Ag</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">48<span style="float:right;">112.41</span></p><h2>Cd</h2></td>
-				  <td bgcolor="hotpink" align="center"><p style="text-align:left;">49<span style="float:right;">114.82</span></p><h2>In</h2></td>
-				  <td bgcolor="hotpink" align="center"><p style="text-align:left;">50<span style="float:right;">118.71</span></p><h2>Sn</h2></td>
-				  <td bgcolor="hotpink" align="center"><p style="text-align:left;">51<span style="float:right;">121.75</span></p><h2>Sb</h2></td>
-				  <td bgcolor="yellow" align="center"><p style="text-align:left;">52<span style="float:right;">127.60</span></p><h2>Te</h2></td>
-				  <td bgcolor="yellow" align="center"><p style="text-align:left;">53<span style="float:right;">126.904</span></p><h2>I</h2></td>
-				  <td bgcolor="slateblue" align="center"><p style="text-align:left;">54<span style="float:right;">131.29</span></p><h2>Xe</h2></td>
+					<td bgcolor="#32CD32" align="center"><p style="text-align:right;">107.868</p><h2>Ag</h2><p style="text-align:left;">47</p></td>
+					<td bgcolor="#32CD32" align="center"><p style="text-align:right;">112.41</p><h2>Cd</h2><p style="text-align:left;">48</p></td>
+					<td bgcolor="hotpink" align="center"><p style="text-align:right;">114.82</p><h2>In</h2><p style="text-align:left;">49</p></td>
+					<td bgcolor="hotpink" align="center"><p style="text-align:right;">118.71</p><h2>Sn</h2><p style="text-align:left;">50</p></td>
+					<td bgcolor="hotpink" align="center"><p style="text-align:right;">121.75</p><h2>Sb</h2><p style="text-align:left;">51</p></td>
+					<td bgcolor="yellow" align="center"><p style="text-align:right;">127.60</p><h2>Te</h2><p style="text-align:left;">52</p></td>
+					<td bgcolor="yellow" align="center"><p style="text-align:right;">126.904</p><h2>I</h2><p style="text-align:left;">53</p></td>
+					<td bgcolor="slateblue" align="center"><p style="text-align:right;">131.29</p><h2>Xe</h2><p style="text-align:left;">54</p></td>
 				  </tr>
 				<tr>
 						<td rowspan="2" class="second">6</td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">55<span style="float:right;">132.905</span></p><h2>Cs</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">56<span style="float:right;">137.33</span></p><h2>Ba</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">57<span style="float:right;">138.905</span></p><h2>La*</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">72<span style="float:right;">178.49</span></p><h2>Hf</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">73<span style="float:right;">180.948</span></p><h2>Ta</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">74<span style="float:right;">183.85</span></p><h2>W</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">75<span style="float:right;">186.207</span></p><h2>Re</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">76<span style="float:right;">190.2</span></p><h2>Os</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">77<span style="float:right;">192.22</span></p><h2>Ir</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">78<span style="float:right;">195.08</span></p><h2>Pt</h2></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">132.905</p><h2>Cs</h2><p style="text-align:left;">55</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">137.33</p><h2>Ba</h2><p style="text-align:left;">56</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">138.905</p><h2>La*</h2><p style="text-align:left;">57</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">178.49</p><h2>Hf</h2><p style="text-align:left;">72</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">180.948</p><h2>Ta</h2><p style="text-align:left;">73</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">183.85</p><h2>W</h2><p style="text-align:left;">74</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">186.207</p><h2>Re</h2><p style="text-align:left;">75</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">190.2</p><h2>Os</h2><p style="text-align:left;">76</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">192.22</p><h2>Ir</h2><p style="text-align:left;">77</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">195.08</p><h2>Pt</h2><p style="text-align:left;">78</p></td>
 				  </tr>
 				  <tr>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">79<span style="float:right;">196.967</span></p><h2>Au</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">80<span style="float:right;">200.59</span></p><h2>Hg</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">81<span style="float:right;">204.38</span></p><h2>Ti</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">82<span style="float:right;">207.19</span></p><h2>Pb</h2></td>
-				  <td bgcolor="hotpink" align="center"><p style="text-align:left;">83<span style="float:right;">208.980</span></p><h2>Bi</h2></td>
-				  <td bgcolor="hotpink" align="center"><p style="text-align:left;">84<span style="float:right;">209.98</span></p><h2>Po</h2></td>
-				  <td bgcolor="hotpink" align="center"><p style="text-align:left;">85<span style="float:right;">209.99</span></p><h2>At</h2></td>
-				  <td bgcolor="slateblue" align="center"><p style="text-align:left;">86<span style="float:right;">[222]</span></p><h2>Rn</h2></td>
+					  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">196.967</p><h2>Au</h2><p style="text-align:left;">79</p></td>
+					  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">200.59</p><h2>Hg</h2><p style="text-align:left;">80</p></td>
+					  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">204.38</p><h2>Ti</h2><p style="text-align:left;">81</p></td>
+					  <td bgcolor="#32CD32" align="center"><p style="text-align:right;">207.19</p><h2>Pb</h2><p style="text-align:left;">82</p></td>
+					  <td bgcolor="hotpink" align="center"><p style="text-align:right;">208.980</p><h2>Bi</h2><p style="text-align:left;">83</p></td>
+					  <td bgcolor="hotpink" align="center"><p style="text-align:right;">209.98</p><h2>Po</h2><p style="text-align:left;">84</p></td>
+					  <td bgcolor="hotpink" align="center"><p style="text-align:right;">209.99</p><h2>At</h2><p style="text-align:left;">85</p></td>
+					  <td bgcolor="slateblue" align="center"><p style="text-align:right;">[222]</p><h2>Rn</h2><p style="text-align:left;">86</p></td>
 						</tr>
 				<tr>
 						<td class="first">7</td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">87<span style="float:right;">[223]</span></p><h2>Fr</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">88<span style="float:right;">[226]</span></p><h2>Ra</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">89<span style="float:right;">[227]</span></p><h2>Ac**</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">104<span style="float:right;">[261]</span></p><h2>Rf</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">105<span style="float:right;">[262]</span></p><h2>Db</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">106<span style="float:right;">[263]</span></p><h2>Sg</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">107<span style="float:right;">[262]</span></p><h2>Bh</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">108<span style="float:right;">[265]</span></p><h2>Hs</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">109<span style="float:right;">[266]</span></p><h2>Mt</h2></td>
-				  <td bgcolor="#32CD32" align="center"><p style="text-align:left;">110<span style="float:right;">[269]</span></p><h2>__</h2></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[223]</p><h2>Fr</h2><p style="float:left;">87</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[226]</p><h2>Ra</h2><p style="float:left;">88</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[227]</p><h2>Ac**</h2><p style="float:left;">89</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[261]</p><h2>Rf</h2><p style="float:left;">104</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[262]</p><h2>Db</h2><p style="float:left;">105</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[263]</p><h2>Sg</h2><p style="float:left;">106</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[262]</p><h2>Bh</h2><p style="float:left;">107</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[265]</p><h2>Hs</h2><p style="float:left;">108</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[266]</p><h2>Mt</h2><p style="float:left;">109</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[269]</p><h2>__</h2><p style="float:left;">110</p></td>
 				  </tr>
 		</table>
-		<table  style="width: 1100px">
+		<table  contenteditable = "true" style="width: 1100px">
 				<tr>
-						<td class="first">Лантаноиды</td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">58<span style="float:right;">[140]</span></p><h2>Ce</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">59<span style="float:right;">[141]</span></p><h2>Pr</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">60<span style="float:right;">[144]</span></p><h2>Nd</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">61<span style="float:right;">[145]</span></p><h2>Pm</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">62<span style="float:right;">[150]</span></p><h2>Sm</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">63<span style="float:right;">[152]</span></p><h2>Eu</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">64<span style="float:right;">[157]</span></p><h2>Gd</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">65<span style="float:right;">[159]</span></p><h2>Tb</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">66<span style="float:right;">[162]</span></p><h2>Dy</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">67<span style="float:right;">[165]</span></p><h2>Ho</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">68<span style="float:right;">[167]</span></p><h2>Er</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">69<span style="float:right;">[169]</span></p><h2>Tm</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">70<span style="float:right;">[173]</span></p><h2>Yb</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">71<span style="float:right;">[175]</span></p><h2>Lu</h2></td>
+						<td class="second">Лантаноиды</td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[140]</p><h2>Ce</h2><p style="float:left;">58</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[141]</p><h2>Pr</h2><p style="float:left;">59</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[144]</p><h2>Nd</h2><p style="float:left;">60</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[145]</p><h2>Pm</h2><p style="float:left;">61</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[150]</p><h2>Sm</h2><p style="float:left;">62</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[152]</p><h2>Eu</h2><p style="float:left;">63</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[157]</p><h2>Gd</h2><p style="float:left;">64</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[159]</p><h2>Tb</h2><p style="float:left;">65</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[162]</p><h2>Dy</h2><p style="float:left;">66</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[165]</p><h2>Ho</h2><p style="float:left;">67</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[167]</p><h2>Er</h2><p style="float:left;">68</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[169]</p><h2>Tm</h2><p style="float:left;">69</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[173]</p><h2>Yb</h2><p style="float:left;">70</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[175]</p><h2>Lu</h2><p style="float:left;">71</p></td>
 				  </tr>
 				<tr>
-						<td class="first">Актиноиды</td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">90<span style="float:right;">[232]</span></p><h2>Th</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">91<span style="float:right;">[231]</span></p><h2>Pa</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">92<span style="float:right;">[238]</span></p><h2>U</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">93<span style="float:right;">[237]</span></p><h2>Np</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">94<span style="float:right;">[244]</span></p><h2>Pu</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">95<span style="float:right;">[243]</span></p><h2>Am</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">96<span style="float:right;">[247]</span></p><h2>Cm</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">97<span style="float:right;">[247]</span></p><h2>Bk</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">98<span style="float:right;">[251]</span></p><h2>Cf</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">99<span style="float:right;">[252]</span></p><h2>Es</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">100<span style="float:right;">[257]</span></p><h2>Fm</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">101<span style="float:right;">[258]</span></p><h2>Md</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">102<span style="float:right;">[259]</span></p><h2>No</h2></td>
-						<td bgcolor="#32CD32" align="center"><p style="text-align:left;">103<span style="float:right;">[260]</span></p><h2>Lr</h2></td>
+						<td class="second">Актиноиды</td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[232]</p><h2>Th</h2><p style="float:left;">90</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[231]</p><h2>Pa</h2><p style="float:left;">91</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[238]</p><h2>U</h2><p style="float:left;">92</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[237]</p><h2>Np</h2><p style="float:left;">93</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[244]</p><h2>Pu</h2><p style="float:left;">94</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[243]</p><h2>Am</h2><p style="float:left;">95</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[247]</p><h2>Cm</h2><p style="float:left;">96</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[247]</p><h2>Bk</h2><p style="float:left;">97</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[251]</p><h2>Cf</h2><p style="float:left;">98</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[252]</p><h2>Es</h2><p style="float:left;">99</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[257]</p><h2>Fm</h2><p style="float:left;">100</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[258]</p><h2>Md</h2><p style="float:left;">101</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[259]</p><h2>No</h2><p style="float:left;">102</p></td>
+						<td bgcolor="#32CD32" align="center"><p style="text-align:right;">[260]</p><h2>Lr</h2><p style="float:left;">103</p></td>
 				  </tr>
 				</table>
 				</html>
