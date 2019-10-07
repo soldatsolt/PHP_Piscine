@@ -1,0 +1,22 @@
+body {
+	background-color: #505050;
+}
+
+.container {
+	width: 1420px;
+	margin: 0 auto;
+}
+	/* длина основы 1420px */
+
+.header
+{
+	/* background: url(./resources/day_of_the_42.png) no-repeat left center #909090; */
+	background: #909090;
+	border-radius: 7px;
+	display: block;
+	width: 1420px;
+	height: 140px;
+	padding: 20px 0;
+	margin: 0 auto;
+	box-shadow: 10px 10px 10px black;
+}
