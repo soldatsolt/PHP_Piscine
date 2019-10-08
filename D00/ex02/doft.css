@@ -1,16 +1,10 @@
 body {
 	background-color: #505050;
 }
-
-.container {
-	width: 1420px;
-	margin: 0 auto;
-}
 	/* длина основы 1420px */
 
 .header
 {
-	/* background: url(./resources/day_of_the_42.png) no-repeat left center #909090; */
 	background: #909090;
 	border-radius: 7px;
 	display: block;
@@ -22,16 +16,62 @@ body {
 	padding: 0 0 0 0;
 }
 
+.container {
+	width: 1360px;
+	margin: 20px auto;
+}
+
+.item {
+	background: #909090;
+	border-radius: 7px;
+	display: block;
+	float: left;
+}
+
+.item:first-child img {
+	margin-left: 35px;
+	margin-top: 10px;
+	width: 65px;
+	height: 65px;
+}
+
+.item:first-child {
+	width: 140px;
+	height: 430px;
+	box-shadow: 10px 10px 10px black;
+}
+
+.item:nth-child(2) {
+	width: 1020px;
+	height: 580px;
+	box-shadow: 10px 10px 10px black;
+	margin-left: 30px;
+}
+
+.item:last-child {
+	width: 140px;
+	height: 430px;
+	box-shadow: 10px 10px 10px black;
+	float: right;
+}
+
 .close {
+	background: url(./resources/close.gif) no-repeat;
+	background-size: 100% 100%;
 	width: 34px;
+	height: 34px;
 	float: right;
 	margin-top: 100px;
 	margin-right: -35px;
 }
 
+/* * {
+	border: 1px solid red;
+} */
+
 .loupe {
-	margin-right: 50px;
-	margin-bottom: -40px; 
+	margin-top: 15px;
+	float: right;
 }
 
 .dayofthe42 {
@@ -41,8 +81,12 @@ body {
 }
 
 .reload {
+	background: url(./resources/reload.png) no-repeat;
+	background-size: 100% 100%;
 	width: 34px;
+	height: 34px;
 	float: right;
 	margin-top: 4px;
 	margin-right: 4px;
 }
+
