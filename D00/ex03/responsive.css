@@ -8,7 +8,7 @@ body {
 }
 table {
   border-collapse: collapse; 
-  line-height: 1vw;
+  line-height: 1vh;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   background:  #DCECF8;
   color: #0C213B;
@@ -18,7 +18,7 @@ table {
 }
 .big
 {
-	font-size: 30vw;
+	font-size: 30vh;
 }
 caption {
   font-family: annabelle, cursive;
@@ -34,46 +34,46 @@ caption:before, caption:after {
   margin: 0 10px;
 }
 th {
-  padding: 1.4vw; 
+  padding: 0vh; 
   border: 1px solid #115a3e;
   margin-left: 0;
   margin-right: 0;
 }
 td {
-  font-size: 0.8em;
-  padding: 1vw 0vw 0vw 1vw;
+  font-size: 0.8vh;
+  padding: 0.5vh 0vw 0vw 1vw;
   border: 1px solid #A9E2CC;
 }
 .first {
   font-size: 2vw;
   font-weight: bold;
   text-align: center;
-  height: 2vw;
+  height: 2vh;
 }
 p {
 	margin: 0 0 0 0;
-	font-size: 1.05vw;
+	font-size: 1.05vh;
 }
 
 h2 {
 	margin-top: 0px;
 	margin-bottom: 0px;
-	font-size: 1.5vw;
+	font-size: 1.5vh;
 }
 
 .third {
 	width: 2vw;
-	font-size: 2vw;
+	font-size: 2vh;
 	font-weight: bold;
 	text-align: center;
-	height: 2vw;
+	height: 2vh;
   }
 
 .second {
-  font-size: 2vw;
+  font-size: 2vh;
   font-weight: bold;
   text-align: center;
-  height: 2vw;
+  height: 2vh;
 }
 /* tr, td{
 	width: 100%;

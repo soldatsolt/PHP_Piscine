@@ -19,4 +19,30 @@ body {
 	padding: 20px 0;
 	margin: 0 auto;
 	box-shadow: 10px 10px 10px black;
+	padding: 0 0 0 0;
+}
+
+.close {
+	width: 34px;
+	float: right;
+	margin-top: 100px;
+	margin-right: -35px;
+}
+
+.loupe {
+	margin-right: 50px;
+	margin-bottom: -40px; 
+}
+
+.dayofthe42 {
+	width: 440px;
+	margin-top: 13px;
+	margin-left: 5px;
+}
+
+.reload {
+	width: 34px;
+	float: right;
+	margin-top: 4px;
+	margin-right: 4px;
 }
