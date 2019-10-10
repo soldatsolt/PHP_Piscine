@@ -24,9 +24,9 @@ if ($argc > 1)
 	// echo $Month[1] . "\n";
 	$text = 'lundi 12 novembre 2013 12:02:21';
 	$text = trim($text);
-	$regexp = '/(?<weekday>[Ll]undi|[Mm]ardi|[mM]ercredi|[jJ]eudi|[Vv]endredi|[Ss]amedi|[Dd]imanche) (?<daynumber>[0-9]{1,2}) (?<month>[Jj]anvier|[Ff]evrier|[Mm]ars|[Aa]vril|[Mm]ai|[Jj]uin|[Jj]uillet|[Aa]out|[Ss]eptembre|[Oo]ctobre|[Nn]ovembre|[Dd]ecembre) (?<year>[0-9]{4,4}) (?<hour>[0-9]{2,2})[:](?<minute>[0-9]{2,2})[:](?<second>[0-9]{2,2})$/';
+	$regexp = '/^(?<weekday>[Ll]undi|[Mm]ardi|[mM]ercredi|[jJ]eudi|[Vv]endredi|[Ss]amedi|[Dd]imanche) (?<daynumber>[0-9]{1,2}) (?<month>[Jj]anvier|[Ff]evrier|[Mm]ars|[Aa]vril|[Mm]ai|[Jj]uin|[Jj]uillet|[Aa]out|[Ss]eptembre|[Oo]ctobre|[Nn]ovembre|[Dd]ecembre) (?<year>[0-9]{4,4}) (?<hour>[0-9]{2,2})[:](?<minute>[0-9]{2,2})[:](?<second>[0-9]{2,2})$/';
 	// $regexp = '/(?<weekday>[lundi|mardi]+)[\s]+/i';
-	$result = preg_match_all($regexp, trim($argv[1]), $match);
+	$result = preg_match_all($regexp, ($argv[1]), $match);
 	if ($result)
 	{
 		$weekday = strtolower($match["weekday"][0]);
