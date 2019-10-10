@@ -7,25 +7,24 @@ $Day_of_the_week = array("lundi"=>"Monday", "mardi"=>"Tuesday",
 						 "vendredi"=>"Friday", "samedi"=>"Saturday",
 						 "dimanche"=>"Sunday");
 $Monthes = array("NOT A MONTH", 
-			   "janvier", 
-			   "fevrier", 
-			   "mars", 
-			   "avril", 
-			   "mai", 
-			   "juin", 
-			   "juillet", 
-			   "aout", 
-			   "septembre", 
-			   "octobre", 
-			   "novembre", 
-			   "decembre");
-if ($argc == 2)
+			     "janvier", 
+			     "fevrier", 
+			     "mars", 
+			     "avril", 
+			     "mai", 
+			     "juin", 
+			     "juillet", 
+			     "aout", 
+			     "septembre", 
+			     "octobre", 
+			     "novembre", 
+			     "decembre");
+if ($argc > 1)
 {
-
 	// echo $Month[1] . "\n";
 	$text = 'lundi 12 novembre 2013 12:02:21';
 	$text = trim($text);
-	$regexp = '/(?<weekday>lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche)[\s]+(?<daynumber>[0-9]{1,})[\s]+(?<month>janvier|fevrier|mars|avril|mai|juin|juillet|aout|septembre|octobre|novembre|decembre)[\s]+(?<year>[0-9]{4,})[\s]+(?<hour>[0-9]{2,})[:](?<minute>[0-9]{2,})[:](?<second>[0-9]{2,})/i';
+	$regexp = '/(?<weekday>[Ll]undi|[Mm]ardi|[mM]ercredi|[jJ]eudi|[Vv]endredi|[Ss]amedi|[Dd]imanche) (?<daynumber>[0-9]{1,2}) (?<month>[Jj]anvier|[Ff]evrier|[Mm]ars|[Aa]vril|[Mm]ai|[Jj]uin|[Jj]uillet|[Aa]out|[Ss]eptembre|[Oo]ctobre|[Nn]ovembre|[Dd]ecembre) (?<year>[0-9]{4,4}) (?<hour>[0-9]{2,2})[:](?<minute>[0-9]{2,2})[:](?<second>[0-9]{2,2})$/';
 	// $regexp = '/(?<weekday>[lundi|mardi]+)[\s]+/i';
 	$result = preg_match_all($regexp, trim($argv[1]), $match);
 	if ($result)
