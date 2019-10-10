@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 
 function ft_split($str)
@@ -21,7 +22,27 @@ function ft_split($str)
 		$str = substr($str, $spc);
 		$i++;
 	}
-	sort($array);
 	return $array;
 }
+
+if ($argc > 1)
+{
+	$str = $argv[1];
+	$strarr = ft_split($str);
+	$i = 1;
+	while ($strarr[$i])
+	{
+		echo $strarr[$i];
+		$i++;
+		if ($strarr[$i])
+		echo " ";
+	}
+	if (count($strarr) > 1)
+	{
+		echo " ";
+	}
+	echo $strarr[0];
+	echo "\n";
+}
+
 ?>

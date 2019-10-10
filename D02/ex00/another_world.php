@@ -1,5 +1,5 @@
+#!/usr/bin/php
 <?php
-
 function ft_split($str)
 {
 	$i = 0;
@@ -21,7 +21,15 @@ function ft_split($str)
 		$str = substr($str, $spc);
 		$i++;
 	}
-	sort($array);
 	return $array;
 }
+
+
+if ($argc > 1)
+{
+	$array = ft_split($argv[1]);
+	$str = implode(" ", $array);
+	echo $str . "\n";
+}
+
 ?>
