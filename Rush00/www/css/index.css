@@ -18,10 +18,6 @@
     src: url(../fonts/TuesdayNight.otf) format('truetype');
 }
 
-.addtocart {
-	width: 20px;
-}
-
 body {
     background-color: whitesmoke;
 }

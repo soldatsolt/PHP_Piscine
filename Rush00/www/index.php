@@ -64,7 +64,7 @@ $conn->close();
             <div class="dropdown-content">
                 <a href="">Batman</a>
                 <a href="">Aquaman</a>
-                <a href="">Flush</a>
+                <a href="">Flash</a>
                 <a href="">Ligue</a>
             </div>
         </li>
@@ -141,7 +141,7 @@ $conn->close();
             <div class="container">
 				<div class="goods">
 					<div class="product">
-						<img class="product_img" src="https://files.slack.com/files-pri/TE6FVDN1Y-FPDQ5P1GW/__________________________________________.__________2.jpg" alt="">
+						<img class="product_img" src="https://im0-tub-ru.yandex.net/i?id=664df8c30484206188c110ebec04d61e-l&n=13" alt="">
 							<p><?php $i = 0; echo $array[$i]['name']; ?></p>
 						<div class="product_price">
                         <?php echo $array[$i]['price'].'$'; ?>
@@ -150,7 +150,7 @@ $conn->close();
 						</div>
 					</div> 
 					<div class="product">
-						<img class="product_img" src="https://files.slack.com/files-pri/TE6FVDN1Y-FPDDUFRUP/______________________________.__________4.jpg" alt="">
+						<img class="product_img" src="https://im0-tub-ru.yandex.net/i?id=301ad6d8bfff4a6dd4ef55b1daf0ff0f-l&n=13&w=236&h=350" alt="">
 						<p><?php $i++; echo $array[$i]['name']; ?></p>
 						<div class="product_price">
                         <?php echo $array[$i]['price']; ?>
@@ -159,7 +159,7 @@ $conn->close();
 						</div>
 					</div>
 					<div class="product">
-						<img class="product_img" src="https://files.slack.com/files-pri/TE6FVDN1Y-FNYQK19SN/____________________________________________________________________.__________6.jpg" alt="">
+						<img class="product_img" src="https://im0-tub-ru.yandex.net/i?id=8e46a85b522cc2800ee2dadf02d00b5e-l&n=13" alt="">
 						<p><?php $i++; echo $array[$i]['name']; ?></p>
 						<div class="product_price">
                         <?php echo $array[$i]['price']; ?>
@@ -168,7 +168,7 @@ $conn->close();
 						</div>
 					</div>
 					<div class="product">
-						<img class="product_img" src="https://static-eu.insales.ru/r/w-r8fiH5Z14/fit/530/530/ce/1/plain/images/products/1/141/252141709/tor-kto-derjit-molot.jpg@webp" alt="">
+						<img class="product_img" src="https://im0-tub-ru.yandex.net/i?id=8689aacd0abb9fe56f029dec97b3b8f0-l&n=13" alt="">
 						<p><?php $i++; echo $array[$i]['name']; ?></p>
 						<div class="product_price">
                         <?php echo $array[$i]['price']; ?>
@@ -181,7 +181,7 @@ $conn->close();
             <div class="container">
 				<div class="goods">
 					<div class="product">
-						<img class="product_img" src="https://files.slack.com/files-pri/TE6FVDN1Y-FPDQ5P1GW/__________________________________________.__________2.jpg" alt="">
+						<img class="product_img" src="https://i.ebayimg.com/00/s/MTYwMFgxMDQx/z/hb8AAOSwBXhbF~tv/$_57.JPG?set_id=8800005007" alt="">
 							<p><?php $i = 0; echo $array[$i]['name']; ?></p>
 						<div class="product_price">
                         <?php echo $array[$i]['price'].'$'; ?>
@@ -190,7 +190,7 @@ $conn->close();
 						</div>
 					</div> 
 					<div class="product">
-						<img class="product_img" src="https://files.slack.com/files-pri/TE6FVDN1Y-FPDDUFRUP/______________________________.__________4.jpg" alt="">
+						<img class="product_img" src="https://im0-tub-ru.yandex.net/i?id=8fff3806f675d886c6b2881ab9c659af-l&n=13" alt="">
 						<p><?php $i++; echo $array[$i]['name']; ?></p>
 						<div class="product_price">
                         <?php echo $array[$i]['price']; ?>
@@ -199,7 +199,7 @@ $conn->close();
 						</div>
 					</div>
 					<div class="product">
-						<img class="product_img" src="https://files.slack.com/files-pri/TE6FVDN1Y-FNYQK19SN/____________________________________________________________________.__________6.jpg" alt="">
+						<img class="product_img" src="https://im0-tub-ru.yandex.net/i?id=da5d5070eed649a10bc8118022a262c1-l&n=13" alt="">
 						<p><?php $i++; echo $array[$i]['name']; ?></p>
 						<div class="product_price">
                         <?php echo $array[$i]['price']; ?>
@@ -208,7 +208,7 @@ $conn->close();
 						</div>
 					</div>
 					<div class="product">
-						<img class="product_img" src="https://static-eu.insales.ru/r/w-r8fiH5Z14/fit/530/530/ce/1/plain/images/products/1/141/252141709/tor-kto-derjit-molot.jpg@webp" alt="">
+						<img class="product_img" src="https://im0-tub-ru.yandex.net/i?id=c5b5bccb76fbf32ec9597136689534c8-l&n=13" alt="">
 						<p><?php $i++; echo $array[$i]['name']; ?></p>
 						<div class="product_price">
                         <?php echo $array[$i]['price']; ?>
