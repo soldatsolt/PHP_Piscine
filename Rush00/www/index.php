@@ -10,6 +10,9 @@ function calculate_all_quantity($array)
 	}
 	return $n;
 }
+$comics_quantity = 0;
+$all_cost = 0;
+$assoc = array('buy1'=>1,'buy2'=>2,'buy3'=>3,'buy4'=>4,'buy5'=>5,'buy6'=>6,'buy7'=>7,'buy8'=>8,'buy9'=>9,'buy10'=>10,'buy11'=>11,'buy12'=>12);
 function calculate_all_cost($array)
 {
 	$i = 0;
@@ -33,10 +36,22 @@ $sql = "SELECT * FROM products";
 $result = $conn->query($sql);
 while ($row = $result->fetch_assoc())
 	$array[] = $row;
+$ssttrr = array_shift($_POST);
+$ssttrr = array_key_first($_POST);
 $comics_quantity = calculate_all_quantity($array);
 $all_cost = calculate_all_cost($array);
+$num = $assoc[$ssttrr];
+
+// $_SESSION[$comics_quantity]++;
+// $_SESSION[$all_cost] += $array[$num]['price'];
+	if ($_POST)
+	{
+		$thisis = $array[$num]['quantity'] + 1;
+		$query = "UPDATE products SET quantity='$thisis' WHERE id='$num'";
+		$result = mysqli_query($conn, $query);
+	}
+
 $conn->close();
-// var_dump($array[0]['name']);
 ?>
 <!DOCTYPE html>
 <html>
@@ -60,8 +75,10 @@ $conn->close();
         </li>
         </li>
         <li class="dropdown" style="float:left">
-            <a href="#" class="dropbtn">Superhero<img src="img/arrow.png" class="img-arrow"></a>
+			<a href="#" class="dropbtn">Superhero<img src="img/arrow.png" class="img-arrow"></a>
+			<?php var_dump($_POST);?>
             <div class="dropdown-content">
+			
                 <a href="">Batman</a>
                 <a href="">Aquaman</a>
                 <a href="">Flash</a>
@@ -78,7 +95,7 @@ $conn->close();
             <div class="dropdown-content">
                 <a href="register.php">Registration</a>
                 <a href="sign_in.php">Sign in</a>
-                <a href="account.php">My preferences</a>
+                <a href="admin.php">My preferences</a>
                 <a href="logout.php">Sign out</a>
             </div>
         </li>
@@ -101,39 +118,47 @@ $conn->close();
         <div class="container">
 				<div class="goods">
 					<div class="product">
-						<img class="product_img" src="https://files.slack.com/files-pri/TE6FVDN1Y-FPDQ5P1GW/__________________________________________.__________2.jpg" alt="">
-							<p><?php $i = 0; echo $array[$i]['name']; ?></p>
+						<img class="product_img" src="<?php $i=0; echo $array[$i]['url']; ?>" alt="">
+							<p><?php echo $array[$i]['name']; ?></p>
 						<div class="product_price">
-                        <?php echo $array[$i]['price'].'$'; ?>
-                        <input class="addtocart" type="text" name="good1" value="1">
-						<input class="butonform2" name="buy1" type="submit" value="buy"><br />
+						<?php echo $array[$i]['price'].'$'; ?>
+						<form  class="addtocart" action="index.php" method="POST">
+                        <input type="text" name="good1" value="1">
+						<input class="butonform2" name="buy1" type="submit" value="buy">
+						</form>
 						</div>
 					</div> 
 					<div class="product">
-						<img class="product_img" src="https://files.slack.com/files-pri/TE6FVDN1Y-FPDDUFRUP/______________________________.__________4.jpg" alt="">
-						<p><?php $i++; echo $array[$i]['name']; ?></p>
+						<img class="product_img" src="<?php $i++; echo $array[$i]['url']; ?>" alt="">
+						<p><?php echo $array[$i]['name']; ?></p>
 						<div class="product_price">
-                        <?php echo $array[$i]['price']; ?>
+						<?php echo $array[$i]['price'].'$'; ?>
+						<form  class="addtocart" action="index.php" method="POST">
 						<input class="addtocart" type="text" name="good2" value="1">
-						<input class="butonform2" name="buy2" type="submit" value="buy"><br />
+						<input class="butonform2" name="buy2" type="submit" value="buy">
+						</form>
 						</div>
 					</div>
 					<div class="product">
-						<img class="product_img" src="https://files.slack.com/files-pri/TE6FVDN1Y-FNYQK19SN/____________________________________________________________________.__________6.jpg" alt="">
-						<p><?php $i++; echo $array[$i]['name']; ?></p>
+						<img class="product_img" src="<?php $i++; echo $array[$i]['url']; ?>" alt="">
+						<p><?php echo $array[$i]['name']; ?></p>
 						<div class="product_price">
-                        <?php echo $array[$i]['price']; ?>
+						<?php echo $array[$i]['price'].'$'; ?>
+						<form  class="addtocart" action="index.php" method="POST">
                         <input class="addtocart" type="text" name="good3" value="1">
-						<input class="butonform2" name="buy3" type="submit" value="buy"><br />
+						<input class="butonform2" name="buy3" type="submit" value="buy">
+						</form>
 						</div>
 					</div>
 					<div class="product">
-						<img class="product_img" src="https://static-eu.insales.ru/r/w-r8fiH5Z14/fit/530/530/ce/1/plain/images/products/1/141/252141709/tor-kto-derjit-molot.jpg@webp" alt="">
-						<p><?php $i++; echo $array[$i]['name']; ?></p>
+						<img class="product_img" src="<?php $i++; echo $array[$i]['url']; ?>" alt="">
+						<p><?php echo $array[$i]['name']; ?></p>
 						<div class="product_price">
-                        <?php echo $array[$i]['price']; ?>
+						<?php echo $array[$i]['price'].'$'; ?>
+						<form  class="addtocart" action="index.php" method="POST">
                         <input class="addtocart" type="text" name="good4" value="1">
-						<input class="butonform2" name="buy4" type="submit" value="buy"><br />
+						<input class="butonform2" name="buy4" type="submit" value="buy">
+						</form>
 						</div>
 					</div>
 				</div>
@@ -141,39 +166,47 @@ $conn->close();
             <div class="container">
 				<div class="goods">
 					<div class="product">
-						<img class="product_img" src="https://im0-tub-ru.yandex.net/i?id=664df8c30484206188c110ebec04d61e-l&n=13" alt="">
-							<p><?php $i = 0; echo $array[$i]['name']; ?></p>
+						<img class="product_img" src="<?php $i++; echo $array[$i]['url']; ?>" alt="">
+							<p><?php echo $array[$i]['name']; ?></p>
 						<div class="product_price">
-                        <?php echo $array[$i]['price'].'$'; ?>
+						<?php echo $array[$i]['price'].'$'; ?>
+						<form  class="addtocart" action="index.php" method="POST">
                         <input class="addtocart" type="text" name="good5" value="1">
-						<input class="butonform2" name="buy5" type="submit" value="buy"><br />
+						<input class="butonform2" name="buy5" type="submit" value="buy">
+						</form>
 						</div>
-					</div> 
+					</div>
 					<div class="product">
-						<img class="product_img" src="https://im0-tub-ru.yandex.net/i?id=301ad6d8bfff4a6dd4ef55b1daf0ff0f-l&n=13&w=236&h=350" alt="">
-						<p><?php $i++; echo $array[$i]['name']; ?></p>
+						<img class="product_img" src="<?php $i++; echo $array[$i]['url']; ?>" alt="">
+						<p><?php echo $array[$i]['name']; ?></p>
 						<div class="product_price">
-                        <?php echo $array[$i]['price']; ?>
+						<?php echo $array[$i]['price'].'$'; ?>
+						<form  class="addtocart" action="index.php" method="POST">
                         <input class="addtocart" type="text" name="good6" value="1">
-						<input class="butonform2" name="buy6" type="submit" value="buy"><br />
+						<input class="butonform2" name="buy6" type="submit" value="buy">
+						</form>
 						</div>
 					</div>
 					<div class="product">
-						<img class="product_img" src="https://im0-tub-ru.yandex.net/i?id=8e46a85b522cc2800ee2dadf02d00b5e-l&n=13" alt="">
-						<p><?php $i++; echo $array[$i]['name']; ?></p>
+						<img class="product_img" src="<?php $i++; echo $array[$i]['url']; ?>" alt="">
+						<p><?php echo $array[$i]['name']; ?></p>
 						<div class="product_price">
-                        <?php echo $array[$i]['price']; ?>
+						<?php echo $array[$i]['price'].'$'; ?>
+						<form  class="addtocart" action="index.php" method="POST">
                         <input class="addtocart" type="text" name="good7" value="1">
-						<input class="butonform2" name="buy7" type="submit" value="buy"><br />
+						<input class="butonform2" name="buy7" type="submit" value="buy">
+						</form>
 						</div>
 					</div>
 					<div class="product">
-						<img class="product_img" src="https://im0-tub-ru.yandex.net/i?id=8689aacd0abb9fe56f029dec97b3b8f0-l&n=13" alt="">
-						<p><?php $i++; echo $array[$i]['name']; ?></p>
+						<img class="product_img" src="<?php $i++; echo $array[$i]['url']; ?>" alt="">
+						<p><?php echo $array[$i]['name']; ?></p>
 						<div class="product_price">
-                        <?php echo $array[$i]['price']; ?>
+						<?php echo $array[$i]['price'].'$'; ?>
+						<form  class="addtocart" action="index.php" method="POST">
                         <input class="addtocart" type="text" name="good8" value="1">
-						<input class="butonform2" name="buy8" type="submit" value="buy"><br />
+						<input class="butonform2" name="buy8" type="submit" value="buy">
+						</form>
 						</div>
 					</div>
 				</div>
@@ -181,39 +214,47 @@ $conn->close();
             <div class="container">
 				<div class="goods">
 					<div class="product">
-						<img class="product_img" src="https://i.ebayimg.com/00/s/MTYwMFgxMDQx/z/hb8AAOSwBXhbF~tv/$_57.JPG?set_id=8800005007" alt="">
-							<p><?php $i = 0; echo $array[$i]['name']; ?></p>
+						<img class="product_img" src="<?php $i++; echo $array[$i]['url']; ?>" alt="">
+							<p><?php ; echo $array[$i]['name']; ?></p>
 						<div class="product_price">
-                        <?php echo $array[$i]['price'].'$'; ?>
+						<?php echo $array[$i]['price'].'$'; ?>
+						<form  class="addtocart" action="index.php" method="POST">
                         <input class="addtocart" type="text" name="good9" value="1">
-						<input class="butonform2" name="buy9" type="submit" value="buy"><br />
+						<input class="butonform2" name="buy9" type="submit" value="buy">
+						</form>
 						</div>
 					</div> 
 					<div class="product">
-						<img class="product_img" src="https://im0-tub-ru.yandex.net/i?id=8fff3806f675d886c6b2881ab9c659af-l&n=13" alt="">
-						<p><?php $i++; echo $array[$i]['name']; ?></p>
+						<img class="product_img" src="<?php $i++; echo $array[$i]['url']; ?>" alt="">
+						<p><?php echo $array[$i]['name']; ?></p>
 						<div class="product_price">
-                        <?php echo $array[$i]['price']; ?>
+						<?php echo $array[$i]['price']; ?>
+						<form  class="addtocart" action="index.php" method="POST">
                         <input class="addtocart" type="text" name="good10" value="1">
-						<input class="butonform2" name="buy10" type="submit" value="buy"><br />
+						<input class="butonform2" name="buy10" type="submit" value="buy">
+						</form>
 						</div>
 					</div>
 					<div class="product">
-						<img class="product_img" src="https://im0-tub-ru.yandex.net/i?id=da5d5070eed649a10bc8118022a262c1-l&n=13" alt="">
-						<p><?php $i++; echo $array[$i]['name']; ?></p>
+						<img class="product_img" src="<?php $i++; echo $array[$i]['url']; ?>" alt="">
+						<p><?php echo $array[$i]['name']; ?></p>
 						<div class="product_price">
-                        <?php echo $array[$i]['price']; ?>
+						<?php echo $array[$i]['price'].'$'; ?>
+						<form  class="addtocart" action="index.php" method="POST">
                         <input class="addtocart" type="text" name="good11" value="1">
-						<input class="butonform2" name="buy11" type="submit" value="buy"><br />
+						<input class="butonform2" name="buy11" type="submit" value="buy">
+						</form>
 						</div>
 					</div>
 					<div class="product">
-						<img class="product_img" src="https://im0-tub-ru.yandex.net/i?id=c5b5bccb76fbf32ec9597136689534c8-l&n=13" alt="">
-						<p><?php $i++; echo $array[$i]['name']; ?></p>
+						<img class="product_img" src="<?php $i++; echo $array[$i]['url']; ?>" alt="">
+						<p><?php echo $array[$i]['name']; ?></p>
 						<div class="product_price">
-                        <?php echo $array[$i]['price']; ?>
+						<?php echo $array[$i]['price'].'$'; ?>
+						<form  class="addtocart" action="index.php" method="POST">
                         <input class="addtocart" type="text" name="good12" value="1">
-						<input class="butonform2" name="buy12" type="submit" value="buy"><br />
+						<input class="butonform2" name="buy12" type="submit" value="buy">
+						</form>
 						</div>
 					</div>
 				</div>

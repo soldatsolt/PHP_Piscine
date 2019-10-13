@@ -1,12 +1,42 @@
 <?php
+function calculate_all_quantity($array)
+{
+	$i = 0;
+	$n = 0;
+	while ($array[$i])
+	{
+		$n += $array[$i]["quantity"];
+		$i++;
+	}
+	return $n;
+}
+function calculate_all_cost($array)
+{
+	$i = 0;
+	$n = 0;
+	while ($array[$i])
+	{
+		$n += $array[$i]["quantity"] * $array[$i]["price"];
+		$i++;
+	}
+	return $n;
+}
+session_start();
+$NAME = "guest";
+if ($_SESSION[$loggued_on_user])
+	$NAME =  $_SESSION[$loggued_on_user] . PHP_EOL;
+else
+	$NAME = "guest";
 // Create connection
 $conn = new mysqli ("192.168.99.100", "root", "root", "Rush00", 3306);
-if($_POST['submit'])
-{
-	$query = "DELETE FROM products WHERE name='".$_POST['name']."'";
-	$result = mysqli_query($conn, $query);
-}
+$sql = "SELECT * FROM products";
+$result = $conn->query($sql);
+while ($row = $result->fetch_assoc())
+	$array[] = $row;
+$comics_quantity = calculate_all_quantity($array);
+$all_cost = calculate_all_cost($array);
 $conn->close();
+// var_dump($array[0]['name']);
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,7 +51,7 @@ $conn->close();
 ​
 <body>
     <div class="top-div">
-	<a href="index.php"><p class="top-txt">-- 21 Comics <?php echo $NAME;?> --</p></a>
+        <a href="index.php"><p class="top-txt">-- 21 Comics <?php echo $NAME;?> --</p></a>
         <p class="top-sub">In Batman we trust<p>
     </div>
     <ul style="top: 150px">
@@ -38,7 +68,9 @@ $conn->close();
                 <a href="">Ligue</a>
             </div>
         </li>
-        <li class="dropdown" style="float:right">
+		<li class="dropdown" style="float:right">
+			<a href="#" class="dropbtn"><?php echo '$'.$all_cost;?></a>
+			<a href="#" class="dropbtn"><?php echo $comics_quantity."шт";?></a>
             <a href="cart.php" class="dropbtn"><img src="img/bag.png" class="img-bag"></a>
         </li>
         <li class="dropdown" style="float:right">
@@ -58,18 +90,7 @@ $conn->close();
 	    </li>
     </ul>
     <div class="main">
-		<img class="home-img" src="img/home<?php echo (time() % 2);?>.jpg" alt="background">
-		</div>
-		<div class="home-txt1">
-            <h1>Change</h1>
-            <div class="form.txt">
-				<form class="form_o" action="delcomics.php.php" method="POST">
-					<input class="form" name="name" type="text" placeholder="название комикса" value="">
-					<br>
-					<input class="butonform" name="submit" type="submit" value="OK"><br />
-					<a  href="index.php"><input class="butonform" name="submit" type="submit" value="Return"><br /></a>
-				</form>
-        	</div>
-    	</div>	
+        <img class="home-img" src="img/home<?php echo (time() % 2);?>.jpg" alt="background">
+</div>
 </body>
 </html>

@@ -13,6 +13,10 @@
     src: url(../fonts/Chlakh.ttf);
 }
 
+.addtocart input {
+	width:  10px;
+}
+
 @font-face {
     font-family: myTN;
     src: url(../fonts/TuesdayNight.otf) format('truetype');
@@ -299,7 +303,7 @@ li.dropdown {
     background: lightgray;
     text-align: center;
 }
-.butonform2 {
+.addtocart.butonform2 {
     border-radius: 10px;
     box-shadow: 15px;
     background: lightskyblue;
