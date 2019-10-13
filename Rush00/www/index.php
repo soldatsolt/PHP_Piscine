@@ -1,4 +1,26 @@
 <?php
+function calculate_all_quantity($array)
+{
+	$i = 0;
+	$n = 0;
+	while ($array[$i])
+	{
+		$n += $array[$i]["quantity"];
+		$i++;
+	}
+	return $n;
+}
+function calculate_all_cost($array)
+{
+	$i = 0;
+	$n = 0;
+	while ($array[$i])
+	{
+		$n += $array[$i]["quantity"] * $array[$i]["price"];
+		$i++;
+	}
+	return $n;
+}
 session_start();
 $NAME = "guest";
 if ($_SESSION[$loggued_on_user])
@@ -11,6 +33,8 @@ $sql = "SELECT * FROM products";
 $result = $conn->query($sql);
 while ($row = $result->fetch_assoc())
 	$array[] = $row;
+$comics_quantity = calculate_all_quantity($array);
+$all_cost = calculate_all_cost($array);
 $conn->close();
 // var_dump($array[0]['name']);
 ?>
@@ -44,7 +68,9 @@ $conn->close();
                 <a href="">Ligue</a>
             </div>
         </li>
-        <li class="dropdown" style="float:right">
+		<li class="dropdown" style="float:right">
+			<a href="#" class="dropbtn"><?php echo '$'.$all_cost;?></a>
+			<a href="#" class="dropbtn"><?php echo $comics_quantity."шт";?></a>
             <a href="cart.php" class="dropbtn"><img src="img/bag.png" class="img-bag"></a>
         </li>
         <li class="dropdown" style="float:right">

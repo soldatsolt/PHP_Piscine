@@ -3,26 +3,6 @@
     src: url(../fonts/BebasNeue.woff);
 }
 
-.container {
-	width: 1000px;
-	margin: 0 auto;
-}
-
-
-.product p {
-	text-align: center;
-}
-
-.product {
-	width: 250px;
-	text-align: center;
-	float: left;
-}
-
-.product_img {
-	width: 70%;
-}
-
 @font-face {
     font-family: myLeafy;
     src: url(../fonts/Leafy.woff);
@@ -234,4 +214,44 @@ li.dropdown {
     height: 10px;
     left: -2.5px;
     top: 1px;
+}
+.form {
+
+    position: center;
+    font-family: myLeafy;
+    width: 150px;
+    height: 20px;
+    font-size: 20px;
+    border-bottom: solid 1px black;
+    padding: 1px 10px 7px 7px;
+    background: lightgray;
+    text-align: center;
+}
+
+.container {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+
+.product p {
+	text-align: center;
+}
+
+.product {
+	width: 250px;
+	text-align: center;
+	float: left;
+}
+
+.product_img {
+	width: 70%;
+}
+
+.butonform {
+    width: 172px;
+}
+.form_o {
+    margin-top: 25px;
+    margin-left: 130px;
 }
