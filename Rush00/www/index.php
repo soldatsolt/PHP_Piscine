@@ -105,7 +105,8 @@ $conn->close();
 							<p><?php $i = 0; echo $array[$i]['name']; ?></p>
 						<div class="product_price">
                         <?php echo $array[$i]['price'].'$'; ?>
-                        <input class="butonform2" name="buy" type="submit" value="buy"><br />
+                        <input class="addtocart" type="text" name="good1" value="1">
+						<input class="butonform2" name="buy1" type="submit" value="buy"><br />
 						</div>
 					</div> 
 					<div class="product">
@@ -113,7 +114,8 @@ $conn->close();
 						<p><?php $i++; echo $array[$i]['name']; ?></p>
 						<div class="product_price">
                         <?php echo $array[$i]['price']; ?>
-                        <input class="butonform2" name="buy" type="submit" value="buy"><br />
+						<input class="addtocart" type="text" name="good2" value="1">
+						<input class="butonform2" name="buy2" type="submit" value="buy"><br />
 						</div>
 					</div>
 					<div class="product">
@@ -121,7 +123,8 @@ $conn->close();
 						<p><?php $i++; echo $array[$i]['name']; ?></p>
 						<div class="product_price">
                         <?php echo $array[$i]['price']; ?>
-                        <input class="butonform2" name="buy" type="submit" value="buy"><br />
+                        <input class="addtocart" type="text" name="good3" value="1">
+						<input class="butonform2" name="buy3" type="submit" value="buy"><br />
 						</div>
 					</div>
 					<div class="product">
@@ -129,7 +132,8 @@ $conn->close();
 						<p><?php $i++; echo $array[$i]['name']; ?></p>
 						<div class="product_price">
                         <?php echo $array[$i]['price']; ?>
-                        <input class="butonform2" name="buy" type="submit" value="buy"><br />
+                        <input class="addtocart" type="text" name="good4" value="1">
+						<input class="butonform2" name="buy4" type="submit" value="buy"><br />
 						</div>
 					</div>
 				</div>
@@ -141,7 +145,8 @@ $conn->close();
 							<p><?php $i = 0; echo $array[$i]['name']; ?></p>
 						<div class="product_price">
                         <?php echo $array[$i]['price'].'$'; ?>
-                        <input class="butonform2" name="buy" type="submit" value="buy"><br />
+                        <input class="addtocart" type="text" name="good5" value="1">
+						<input class="butonform2" name="buy5" type="submit" value="buy"><br />
 						</div>
 					</div> 
 					<div class="product">
@@ -149,7 +154,8 @@ $conn->close();
 						<p><?php $i++; echo $array[$i]['name']; ?></p>
 						<div class="product_price">
                         <?php echo $array[$i]['price']; ?>
-                        <input class="butonform2" name="buy" type="submit" value="buy"><br />
+                        <input class="addtocart" type="text" name="good6" value="1">
+						<input class="butonform2" name="buy6" type="submit" value="buy"><br />
 						</div>
 					</div>
 					<div class="product">
@@ -157,7 +163,8 @@ $conn->close();
 						<p><?php $i++; echo $array[$i]['name']; ?></p>
 						<div class="product_price">
                         <?php echo $array[$i]['price']; ?>
-                        <input class="butonform2" name="buy" type="submit" value="buy"><br />
+                        <input class="addtocart" type="text" name="good7" value="1">
+						<input class="butonform2" name="buy7" type="submit" value="buy"><br />
 						</div>
 					</div>
 					<div class="product">
@@ -165,7 +172,8 @@ $conn->close();
 						<p><?php $i++; echo $array[$i]['name']; ?></p>
 						<div class="product_price">
                         <?php echo $array[$i]['price']; ?>
-                        <input class="butonform2" name="buy" type="submit" value="buy"><br />
+                        <input class="addtocart" type="text" name="good8" value="1">
+						<input class="butonform2" name="buy8" type="submit" value="buy"><br />
 						</div>
 					</div>
 				</div>
@@ -177,7 +185,8 @@ $conn->close();
 							<p><?php $i = 0; echo $array[$i]['name']; ?></p>
 						<div class="product_price">
                         <?php echo $array[$i]['price'].'$'; ?>
-                        <input class="butonform2" name="buy" type="submit" value="buy"><br />
+                        <input class="addtocart" type="text" name="good9" value="1">
+						<input class="butonform2" name="buy9" type="submit" value="buy"><br />
 						</div>
 					</div> 
 					<div class="product">
@@ -185,7 +194,8 @@ $conn->close();
 						<p><?php $i++; echo $array[$i]['name']; ?></p>
 						<div class="product_price">
                         <?php echo $array[$i]['price']; ?>
-                        <input class="butonform2" name="buy" type="submit" value="buy"><br />
+                        <input class="addtocart" type="text" name="good10" value="1">
+						<input class="butonform2" name="buy10" type="submit" value="buy"><br />
 						</div>
 					</div>
 					<div class="product">
@@ -193,7 +203,8 @@ $conn->close();
 						<p><?php $i++; echo $array[$i]['name']; ?></p>
 						<div class="product_price">
                         <?php echo $array[$i]['price']; ?>
-                        <input class="butonform2" name="buy" type="submit" value="buy"><br />
+                        <input class="addtocart" type="text" name="good11" value="1">
+						<input class="butonform2" name="buy11" type="submit" value="buy"><br />
 						</div>
 					</div>
 					<div class="product">
@@ -201,12 +212,12 @@ $conn->close();
 						<p><?php $i++; echo $array[$i]['name']; ?></p>
 						<div class="product_price">
                         <?php echo $array[$i]['price']; ?>
-                        <input class="butonform2" name="buy" type="submit" value="buy"><br />
+                        <input class="addtocart" type="text" name="good12" value="1">
+						<input class="butonform2" name="buy12" type="submit" value="buy"><br />
 						</div>
 					</div>
 				</div>
             </div>
-            
-	</div>
-</body>
+		</div>
+	</body>
 </html>
