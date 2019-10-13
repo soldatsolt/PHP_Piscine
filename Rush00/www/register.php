@@ -2,7 +2,7 @@
 	$login = $_POST['login'];
 	$mail = $_POST['mail'];
 	$passwd = $_POST['passwd'];
-
+	$hashed_passwd = hash('whirlpool', $passwd);
 	$host = "192.168.99.100";
 	$dbusername = "root";
 	$dbpassword = "root";
@@ -30,7 +30,7 @@
 	else
 	{
 		if (find_n_of_user($array, "login", $login) == -1 && isset($login) && isset($passwd))
-			$sql = "INSERT INTO users (login, mail, passwd)   values ('$login','$mail','$passwd')";
+			$sql = "INSERT INTO users (login, mail, passwd)   values ('$login','$mail', '$hashed_passwd')";
 		if ($_POST && $sql && $conn->query($sql))
 			header("Location: index.php");
 		$conn->close();
@@ -49,7 +49,7 @@
 
 <body>
     <div class="top-div">
-        <p class="top-txt">-- 21 Comics <?php echo $NAME;?> --</p>
+	<a href="index.php"><p class="top-txt">-- 21 Comics <?php echo $NAME;?> --</p></a>
         <p class="top-sub">In Batman we trust<p>
     </div>
     <ul style="top: 150px">
@@ -86,8 +86,9 @@
 	    </li>
     </ul>
     <div class="main">
-        <img class="home-img" src="img/home<?php echo (time() % 2);?>.jpg" alt="background">
-		<div class="home-txt">
+		<img class="home-img" src="img/home<?php echo (time() % 2);?>.jpg" alt="background">
+		</div>
+		<div class="home-txt1">
             <h1>Registration</h1>
             <div class="form.txt">
 				<form class="form_o" action="register.php" method="POST">
@@ -102,9 +103,8 @@
 				</form>
         	</div>
     	</div>	
-	</div>
+
 </body>
 </html>
-
 
 

@@ -69,7 +69,7 @@ li.dropdown {
 .dropdown-content a {
     position: relative;
     color: grey;
-    padding: 12px 16px;
+    padding: 12px 10px;
     text-decoration: none;
     display: block;
     text-align: left;
@@ -142,12 +142,27 @@ li.dropdown {
     border: solid lightgrey 1px;
     box-shadow: 0px 8px 32px 0px rgba(138, 34, 34, 0.2);
 }
+.home-txt1 {
+    position: absolute;
+    width: 450px;
+    top: 370px;
+    left: 50%;
+    transform: translate(-50%);
+    background: transparent 50%;
+    border: solid lightgrey 1px;
+    box-shadow: 0px 8px 32px 0px rgba(138, 34, 34, 0.2);
+}
 
 .home-txt:hover {
     box-shadow: 0px 16px 48px 0px rgba(0, 0, 0, 0.3);
 }
 
 .home-txt h1 {
+    text-align: center;
+    font-family: fantasy;
+    font-size: 50px;
+}
+.home-txt1 h1 {
     text-align: center;
     font-family: fantasy;
     font-size: 50px;
@@ -170,6 +185,14 @@ li.dropdown {
     font-weight: bold;
     color: black;
 }
+.home-txt1 p {
+    display: inline;
+    font-family: fantasy;
+    line-height: 30px;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+}
 
 .home-txt h2 {
     text-align: end;
@@ -181,6 +204,7 @@ li.dropdown {
 .home-img {
     width: 100%;
     opacity: 0.6;
+    z-index: -2;
 }
 
 
@@ -235,23 +259,52 @@ li.dropdown {
 
 
 .product p {
+    margin: 0;
 	text-align: center;
 }
 
 .product {
-	width: 250px;
+	width:25%;
 	text-align: center;
-	float: left;
+    float: left;
+    font-size: 20px;
 }
 
 .product_img {
-	width: 70%;
+    margin-top: 10px;
+    height:300px;
+	width: 80%;
 }
-
 .butonform {
     width: 172px;
+}
+.butonform1 {
+    width: 142px;
 }
 .form_o {
     margin-top: 25px;
     margin-left: 130px;
+}
+.form_sign {
+    text-align: center;
+}
+.forms {
+    position: center;
+    font-family: myLeafy;
+    width: 150px;
+    height: 30px;
+    font-size: 20px;
+    border-bottom: solid 1px black;
+    padding: 1px 10px 7px 7px;
+    background: lightgray;
+    text-align: center;
+}
+.butonform2 {
+    border-radius: 10px;
+    box-shadow: 15px;
+    background: lightskyblue;
+    margin: 5%;
+    width: 50px;
+    padding-top: 3px;
+    font-size: 15px;
 }
