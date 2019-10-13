@@ -1,10 +1,10 @@
 <?php
 session_start();
-$NAME = "dear guest";
+$NAME = "guest";
 if ($_SESSION[$loggued_on_user])
 	$NAME =  $_SESSION[$loggued_on_user] . PHP_EOL;
 else
-	$NAME = "dear guest";
+	$NAME = "guest";
 // Create connection
 $conn = new mysqli ("192.168.99.100", "root", "root", "Rush00", 3306);
 $sql = "SELECT * FROM products";
@@ -16,54 +16,63 @@ $conn->close();
 ?>
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>MAGAZ</title>
-		<link rel="stylesheet" href="index.css">
-	</head>
-	<body>
-		<header>
-			<div class="container">
-				<nav class="clearfix">
-					<ul class="menu">
-						<li>
-							<span style="margin-right: 100px" href="">hello, <?=$NAME ?></span>
-						</li>
-						<li>
-							<a href="./add_comics.php">добавить комикс</a>
-						</li>
-						<li>
-							<a href="./find_comics_to_mod_it.php">mod</a>
-						</li>
-						<li>
-							<a href="./index.php">home</a>
-						</li>
-						<?php if ($NAME == "dear guest")
-						echo "<li>
-						<a href=\"./sign_in.php\">sign in</a>
-					</li>
-					<li>
-						<a href=\"./form.html\">registration</a>
-					</li>";
-						?>
-						<?php if ($NAME != "dear guest")
-						echo "<li>
-						<a href=\"./logout.php\">log out</a>
-					</li>";
-						?>
-					</ul>
-				</nav>
-			</div>
-		</header>
-		<section>
-		<div class="container">
-			<div class="banners">
-				<img src="https://static-eu.insales.ru/files/1/8121/8347577/original/marvel-thin.png" alt="">
-				<img src="https://static-eu.insales.ru/files/1/8132/8347588/original/dc-thin.png" alt="">
-			</div>
-		</div>
-		</section>
-		<section>
-			<div class="container">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>21 Comics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/index.css" />
+    <link rel="icon" type="image/x-icon" href="dc.ico?v=1" />
+</head>
+
+<body>
+    <div class="top-div">
+        <p class="top-txt">-- 21 Comics <?php echo $NAME;?> --</p>
+        <p class="top-sub">In Batman we trust<p>
+    </div>
+    <ul style="top: 150px">
+        <li><a class="active" href="index.php">Home</a></li>
+        <li class="dropdown">
+        </li>
+        </li>
+        <li class="dropdown" style="float:left">
+            <a href="#" class="dropbtn">Superhero<img src="img/arrow.png" class="img-arrow"></a>
+            <div class="dropdown-content">
+                <a href="">Batman</a>
+                <a href="">Aquaman</a>
+                <a href="">Flush</a>
+                <a href="">Ligue</a>
+            </div>
+        </li>
+        <li class="dropdown" style="float:right">
+            <a href="cart.php" class="dropbtn"><img src="img/bag.png" class="img-bag"></a>
+        </li>
+        <li class="dropdown" style="float:right">
+            <a href="#" class="dropbtn">My account<img src="img/arrow.png" class="img-arrow"></a>
+            <div class="dropdown-content">
+                <a href="register.php">Registration</a>
+                <a href="sign_in.php">Sign in</a>
+                <a href="account.php">My preferences</a>
+                <a href="logout.php">Sign out</a>
+            </div>
+        </li>
+        <li class="dropdown" style="float:right">
+		    <form method="GET" action="search.php" class="dropbtn search-menu">
+			    <input class="search-bar" type="text" name="search" placeholder="Search...">
+                <button class="search-button" type="submit"><img class="img-loupe" src="img/loupe.png"></button>
+		    </form>
+	    </li>
+    </ul>
+    <div class="main">
+        <img class="home-img" src="img/home<?php echo (time() % 2);?>.jpg" alt="background">
+        <div class="home-txt">
+            <h1>Welcome</h1>
+            <div class="home-txt-par">
+                <p>But it takes more than muscles to fight the way Batman does.</p>
+                <h2>Batman film 1989</h2>
+            </div>
+        </div>
+        <div class="container">
 				<div class="goods">
 					<div class="product">
 						<img class="product_img" src="https://files.slack.com/files-pri/TE6FVDN1Y-FPDQ5P1GW/__________________________________________.__________2.jpg" alt="">
@@ -95,6 +104,6 @@ $conn->close();
 					</div>
 				</div>
 			</div>
-		</section>
-	</body>
+	</div>
+</body>
 </html>

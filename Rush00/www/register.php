@@ -1,10 +1,6 @@
 <?php
-	session_start();
-	if ($_SESSION[$loggued_on_user])
-		$NAME =  $_SESSION[$loggued_on_user] . PHP_EOL;
-	else
-		$NAME = "guest";
 	$login = $_POST['login'];
+	$mail = $_POST['mail'];
 	$passwd = $_POST['passwd'];
 
 	$host = "192.168.99.100";
@@ -33,9 +29,8 @@
 		die('Connect Error ('. mysqli_connect_errno() .') ' . mysqli_connect_error());
 	else
 	{
-		$f = find_n_of_user($array, "login", $login);
-		if ($f != -1 && isset($login) && isset($passwd) && $array[$f]['passwd'] == $passwd)
-			$_SESSION[$loggued_on_user] = $array[find_n_of_user($array, "login", $login)]['login'];
+		if (find_n_of_user($array, "login", $login) == -1 && isset($login) && isset($passwd))
+			$sql = "INSERT INTO users (login, mail, passwd)   values ('$login','$mail','$passwd')";
 		if ($_POST && $sql && $conn->query($sql))
 			header("Location: index.php");
 		$conn->close();
@@ -49,9 +44,11 @@
 		<link rel="stylesheet" href="index.css">
 	</head>
 	<body>
-			<form class="rega" action="sign_in.php" method="POST">
+			<form class="rega" action="register.php" method="POST">
 				<br>
 				login: <input name="login" type="text" value=""></input>
+				<br>
+				mail: <input name="mail" type="text" value=""></input>
 				<br>
 				passwd: <input name="passwd" type="text" value=""></input>
 				<br>
