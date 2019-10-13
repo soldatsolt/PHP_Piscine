@@ -104,7 +104,7 @@ $conn->close();
 					{
 						if ($array[$i]['quantity'])
 							echo '<div class="product">
-							<img class="product_img" src=".'$array[$i]["url"]'." alt="">
+							<img class="product_img" src="'.$array[$i]["url"].'" alt="">
 								<p>'.$array[$i]["name"].'</p>
 							<div class="product_price">
 							'.$array[$i]["price"].'$
