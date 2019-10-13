@@ -1,6 +1,6 @@
 header {
 	background: url(./minimalism-batman-dc-comics.jpg) no-repeat center top / cover;
-	height: 600px;
+	height: 300px;
 }
 
 body {
@@ -15,6 +15,33 @@ nav {
 .container {
 	width: 1000px;
 	margin: 0 auto;
+}
+
+.goods {
+
+}
+
+.product p {
+	text-align: center;
+}
+
+.product {
+	width: 250px;
+	text-align: center;
+	float: left;
+}
+
+.product_img {
+	width: 70%;
+}
+
+.product_price {
+	
+}
+
+.banners img {
+	width: 49%;
+	margin: 20px auto;
 }
 
 .rega {
@@ -44,6 +71,15 @@ nav {
 .menu li {
 	float: left;
 	display: block;
+}
+
+.menu span {
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin-right: 41px;
+	font-size: 18px;
+	font-weight: normal;
 }
 
 .menu a {
