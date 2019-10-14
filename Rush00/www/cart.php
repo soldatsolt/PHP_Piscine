@@ -30,6 +30,12 @@ else
 // Create connection
 $conn = new mysqli ("192.168.99.100", "root", "root", "Rush00", 3306);
 $sql = "SELECT * FROM products";
+$ssttrr = array_shift($_POST);
+if (array_shift($_POST) == "+")
+{
+	$query = "UPDATE products SET quantity='$thisis' WHERE id='$num'";
+	$result = mysqli_query($conn, $query);
+}
 $result = $conn->query($sql);
 while ($row = $result->fetch_assoc())
 	$array[] = $row;
@@ -55,7 +61,8 @@ $conn->close();
         <p class="top-sub">In Batman we trust<p>
     </div>
     <ul style="top: 150px">
-        <li><a class="active" href="index.php">Home</a></li>
+		<li><a class="active" href="index.php">Home</a></li>
+		<?php var_dump($ssttrr); ?>
         <li class="dropdown">
         </li>
         </li>
@@ -90,14 +97,6 @@ $conn->close();
 	    </li>
     </ul>
     <div class="main">
-        <img class="home-img" src="img/home<?php echo (time() % 2);?>.jpg" alt="background">
-        <div class="home-txt">
-            <h1>Welcome</h1>
-            <div class="home-txt-par">
-                <p>But it takes more than muscles to fight the way Batman does.</p>
-                <h2>Batman film 1989</h2>
-            </div>
-        </div>
         <div class="container">
 				<div class="goods">
 					<?php $i = 0; while ($array[$i])
@@ -108,7 +107,9 @@ $conn->close();
 								<p>'.$array[$i]["name"].'</p>
 							<div class="product_price">
 							'.$array[$i]["price"].'$
-							<input class="butonform3" name="plus" type="submit" value="+">'.$array[$i]["quantity"].' шт.<input class="butonform3" name="minus" type="submit" value="-"><br />
+							<form action="cart.php" method="POST">
+							<input class="butonform3" name="plus'.$i.'" type="submit" value="+"></form>'.$array[$i]["quantity"].' шт.<form action="cart.php" method="POST">
+							<input class="butonform3" name="minus'.$i.'" type="submit" value="-"></form><br />
 							</div>
 						</div>';
 						$i++;

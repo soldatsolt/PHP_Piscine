@@ -13,7 +13,6 @@
 	$result = $conn->query($sql);
 	while ($row = $result->fetch_assoc())
 		$array[] = $row;
-
 	function find_n_of_user($array, $priznak, $valuetofind)
 	{
 		$i = 0;

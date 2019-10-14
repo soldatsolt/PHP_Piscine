@@ -1,10 +1,10 @@
 <?php
 session_start();
-$NAME = "dear guest";
+$NAME = "guest";
 if ($_SESSION[$loggued_on_user])
 	$NAME =  $_SESSION[$loggued_on_user] . PHP_EOL;
 else
-	$NAME = "dear guest";
+	$NAME = "guest";
 // Create connection
 $conn = new mysqli ("192.168.99.100", "root", "root", "Rush00", 3306);
 if($_POST['submit'])
@@ -70,7 +70,7 @@ $conn->close();
 		<div class="home-txt1">
             <h1>Change</h1>
             <div class="form.txt">
-				<form class="form_o" action="mod_comics.php.php" method="POST">
+				<form class="form_o" action="mod_comics.php" method="POST">
 					<input class="form" name="name" type="text" placeholder="название комикса" value="">
 					<br>
 					<input class="form" name="tomod" type="text" placeholder="изменить" value="">

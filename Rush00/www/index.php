@@ -10,8 +10,8 @@ function calculate_all_quantity($array)
 	}
 	return $n;
 }
-$comics_quantity = 0;
-$all_cost = 0;
+// $comics_quantity = 0;
+// $all_cost = 0;
 $assoc = array('buy1'=>1,'buy2'=>2,'buy3'=>3,'buy4'=>4,'buy5'=>5,'buy6'=>6,'buy7'=>7,'buy8'=>8,'buy9'=>9,'buy10'=>10,'buy11'=>11,'buy12'=>12);
 function calculate_all_cost($array)
 {
@@ -27,7 +27,7 @@ function calculate_all_cost($array)
 session_start();
 $NAME = "guest";
 if ($_SESSION[$loggued_on_user])
-	$NAME =  $_SESSION[$loggued_on_user] . PHP_EOL;
+	$NAME = $_SESSION[$loggued_on_user] . PHP_EOL;
 else
 	$NAME = "guest";
 // Create connection
@@ -38,19 +38,19 @@ while ($row = $result->fetch_assoc())
 	$array[] = $row;
 $ssttrr = array_shift($_POST);
 $ssttrr = array_key_first($_POST);
-$comics_quantity = calculate_all_quantity($array);
-$all_cost = calculate_all_cost($array);
+$thisis = $array[$num - 1]['quantity'] + 1;
+// $comics_quantity = calculate_all_quantity($array);
+// $all_cost = calculate_all_cost($array);
 $num = $assoc[$ssttrr];
-
 // $_SESSION[$comics_quantity]++;
 // $_SESSION[$all_cost] += $array[$num]['price'];
 	if ($_POST)
 	{
-		$thisis = $array[$num]['quantity'] + 1;
+		$_SESSION['all_cost'] += $array[$num - 1]['price'];
+		$_SESSION['comics_quantity']++;
 		$query = "UPDATE products SET quantity='$thisis' WHERE id='$num'";
 		$result = mysqli_query($conn, $query);
 	}
-
 $conn->close();
 ?>
 <!DOCTYPE html>
@@ -70,13 +70,14 @@ $conn->close();
         <p class="top-sub">In Batman we trust<p>
     </div>
     <ul style="top: 150px">
-        <li><a class="active" href="index.php">Home</a></li>
+		<li><a class="active" href="index.php">Home</a></li>
+		<?php if (!$result)
+		echo "sdsdas"?>
         <li class="dropdown">
         </li>
         </li>
         <li class="dropdown" style="float:left">
 			<a href="#" class="dropbtn">Superhero<img src="img/arrow.png" class="img-arrow"></a>
-			<?php var_dump($_POST);?>
             <div class="dropdown-content">
 			
                 <a href="">Batman</a>
@@ -86,16 +87,19 @@ $conn->close();
             </div>
         </li>
 		<li class="dropdown" style="float:right">
-			<a href="#" class="dropbtn"><?php echo '$'.$all_cost;?></a>
-			<a href="#" class="dropbtn"><?php echo $comics_quantity."шт";?></a>
+			<a href="#" class="dropbtn"><?php echo '$'.$_SESSION['all_cost'];?></a>
+			<a href="#" class="dropbtn"><?php echo $_SESSION['comics_quantity']."шт";?></a>
             <a href="cart.php" class="dropbtn"><img src="img/bag.png" class="img-bag"></a>
         </li>
         <li class="dropdown" style="float:right">
             <a href="#" class="dropbtn">My account<img src="img/arrow.png" class="img-arrow"></a>
             <div class="dropdown-content">
                 <a href="register.php">Registration</a>
-                <a href="sign_in.php">Sign in</a>
-                <a href="admin.php">My preferences</a>
+				<a href="sign_in.php">Sign in</a>
+				<?php if ($_SESSION[$loggued_on_user] == "admin" || $_SESSION[$loggued_on_user] == "kmills" || $_SESSION[$loggued_on_user] == "tjuana")
+				echo '
+				<a href="admin.php">My preferences</a>';
+				?>
                 <a href="logout.php">Sign out</a>
             </div>
         </li>
@@ -107,7 +111,7 @@ $conn->close();
 	    </li>
     </ul>
     <div class="main">
-        <img class="home-img" src="img/home<?php echo (time() % 2);?>.jpg" alt="background">
+        <img class="home-img" src="img/home1.jpg" alt="background">
         <div class="home-txt">
             <h1>Welcome</h1>
             <div class="home-txt-par">
