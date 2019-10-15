@@ -1,1 +1,1 @@
-CREATE DATABASE db_kmills;
+CREATE DATABASE IF NOT EXISTS db_kmills;
