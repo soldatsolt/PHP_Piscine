@@ -10,55 +10,52 @@ class Vertex
 	public	$w;
 	public	$color;
 
-	public function __Construct(array $coords = array('x' => 0.0, 'y' => 0.0, 'z' => 0.0, 'w' => 1.0), $construct_color = 'empty')
+	public function __Construct(array $coords = array('x' => 0.0, 'y' => 0.0, 'z' => 0.0, 'w' => 1.0))
 	{
-		if ($construct_color == 'empty')
+		if (!isset($coords['color']))
 			$this->color = new Color();
 		else
-		$this->color = $construct_color;
+			$this->color = $coords['color'];
 		if (isset($coords['x']) && isset($coords['y']) && isset($coords['z']))
 		{
-			$x = $coords['x'];
-			$y = $coords['y'];
-			$z = $coords['z'];
+			$this->x = $coords['x'];
+			$this->y = $coords['y'];
+			$this->z = $coords['z'];
 		}
 		else
 		{
-			$x = 0.00;
-			$y = 0.00;
-			$z = 0.00;
+			$this->x = 0.00;
+			$this->y = 0.00;
+			$this->z = 0.00;
 		}
 		if (!isset($coords['w']))
-			$w = 1.00;
+			$this->w = 1.00;
 		else
-			$w = $coords['w'];
+			$this->w = $coords['w'];
 		if (self::$verbose == TRUE)
-			echo $this.' constructed.'.PHP_EOL;
+			echo $this.' constructed'.PHP_EOL;
 		return ;
 	}
 
+	public static function doc()
+	{
+		return file_get_contents("./Vertex.doc.txt");
+	}
 
 	public function __Destruct()
 	{
 		if (self::$verbose == TRUE)
-			echo $this.' destructed.'.PHP_EOL;
+			echo $this.' destructed'.PHP_EOL;
 		return ;
 	}
 
 	public function __toString()
 	{
-		if ($this->color->summ == 0xFFFFFF)
-			return sprintf("Vertex( x:%4.2f, %4.2f, %4.2f, %4.2f )", $this->x, $this->y, $this->z, $this->w);
+		if (!self::$verbose)
+			return sprintf("Vertex( x: %4.2f, y: %4.2f, z:%4.2f, w:%4.2f )", $this->x, $this->y, $this->z, $this->w);
 		else
-			return 'NOT READY YET';
+			return sprintf("Vertex( x: %4.2f, y: %4.2f, z:%4.2f, w:%4.2f, %s )", $this->x, $this->y, $this->z, $this->w, $this->color);
 	}
 }
-
-Color::$verbose = True;
-Vertex::$verbose = True;
-
-$red   = new Color();
-$vtxO  = new Vertex( array( 'x' => 0.0, 'y' => 0.0, 'z' => 0.0 ) );
-print( $vtxO  . PHP_EOL );
 
 ?>
