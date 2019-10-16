@@ -14,6 +14,7 @@ class Vertex
 	public function getY() { return $this->y; }
 	public function getZ() { return $this->z; }
 	public function getW() { return $this->w; }
+	public function getColor(){ return $this->color; }
 	public function __Construct(array $coords = array('x' => 0.0, 'y' => 0.0, 'z' => 0.0, 'w' => 1.0))
 	{
 		if (!isset($coords['color']))

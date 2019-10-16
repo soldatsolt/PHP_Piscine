@@ -95,10 +95,9 @@ class Vector
 	public function crossProduct(Vector $rhs)
 	{
 		return new Vector(array('dest' => new Vertex(array(
-			'x' => $this->y * $rhs->getZ() - $this->z * $rhs->getY(),
-			'y' => $this->z * $rhs->getX() - $this->x * $rhs->getZ(),
-			'z' => $this->x * $rhs->getY() - $this->y * $rhs->getX()
-		))));
+		'x' => $this->y * $rhs->getZ() - $this->z * $rhs->getY(),
+		'y' => $this->z * $rhs->getX() - $this->x * $rhs->getZ(),
+		'z' => $this->x * $rhs->getY() - $this->y * $rhs->getX()))));
 	}
 
 	public function cos(Vector $rhs)
