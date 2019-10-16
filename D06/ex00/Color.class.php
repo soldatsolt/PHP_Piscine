@@ -13,16 +13,16 @@ class Color
 	{
 		if (isset($rgb['red']) && isset($rgb['green']) && isset($rgb['blue']))
 		{
-			$this->red = $rgb['red'];
-			$this->green = $rgb['green'];
-			$this->blue = $rgb['blue'];
+			$this->red = intval($rgb['red']);
+			$this->green = intval($rgb['green']);
+			$this->blue = intval($rgb['blue']);
 			$this->summ = $this->blue + ($this->green << 8) + ($this->red << 16);
 			if (self::$verbose == TRUE)
 				echo $this.' constructed.'.PHP_EOL;
 		}
 		else if (isset($rgb['rgb']))
 		{
-			$this->summ = $rgb['rgb'];
+			$this->summ = intval($rgb['rgb']);
 			$this->from_summ_to_colours();
 			$this->summ = $this->blue + ($this->green << 8) + ($this->red << 16);
 			if (self::$verbose == TRUE)
@@ -71,9 +71,9 @@ instance.
 
 	private function from_summ_to_colours()
 	{
-		$this->red = (0xFF0000 & $this->summ) >> 16;
-		$this->green = (0xFF00 & $this->summ) >> 8;
-		$this->blue = 0xFF & $this->summ;
+		$this->red = intval((0xFF0000 & $this->summ) >> 16);
+		$this->green = intval((0xFF00 & $this->summ) >> 8);
+		$this->blue = intval(0xFF & $this->summ);
 	}
 
 	public function __toString()
@@ -89,14 +89,56 @@ instance.
 		return $qwe;
 	}
 
+	public function sub(Color $rhs)
+	{
+		$tmpsumm = $this->summ - $rhs->summ;
+		$qwe = new Color(array('rgb' => $tmpsumm));
+		$qwe->from_summ_to_colours();
+		return $qwe;
+	}
+
+	public function mult($f)
+	{
+		$qwe = new Color(array('red' => ($this->red * $f), 'green' => ($this->green * $f)   , 'blue' => ($this->blue) * $f));
+		return $qwe;
+	}
+
 }
 
 
-
+print( Color::doc() );
 Color::$verbose = True;
 $red     = new Color( array( 'red' => 0xff, 'green' => 0   , 'blue' => 0    ) );
 $green   = new Color( array( 'rgb' => 255 << 8 ) );
-$yellow  = $red->add( $green );
+$blue    = new Color( array( 'red' => 0   , 'green' => 0   , 'blue' => 0xff ) );
 
+$yellow  = $red->add( $green );
+$cyan    = $green->add( $blue );
+$magenta = $blue->add( $red );
+
+$white   = $red->add( $green )->add( $blue );
+
+print( $red     . PHP_EOL );
+print( $green   . PHP_EOL );
+print( $blue    . PHP_EOL );
+print( $yellow  . PHP_EOL );
+print( $cyan    . PHP_EOL );
+print( $magenta . PHP_EOL );
+print( $white   . PHP_EOL );
+
+Color::$verbose = False;
+
+$black = $white->sub( $red )->sub( $green )->sub( $blue );
+print( 'Black: ' . $black . PHP_EOL );
+
+Color::$verbose = True;
+
+$darkgrey = new Color( array( 'rgb' => (10 << 16) + (10 << 8) + 10 ) );
+print( 'darkgrey: ' . $darkgrey . PHP_EOL );
+$lightgrey = $darkgrey->mult( 22.5 );
+print( 'lightgrey: ' . $lightgrey . PHP_EOL );
+
+$random = new Color( array( 'red' => 12.3, 'green' => 31.2, 'blue' => 23.1 ) );
+print( 'random: ' . $random . PHP_EOL );
 
 ?>
