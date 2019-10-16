@@ -4,12 +4,16 @@ require_once '../ex00/Color.class.php';
 class Vertex
 {
 	public	static $verbose = FALSE;
-	public	$x;
-	public	$y;
-	public	$z;
-	public	$w;
-	public	$color;
+	private	$x;
+	private	$y;
+	private	$z;
+	private	$w;
+	private	$color;
 
+	public function getX() { return $this->x; }
+	public function getY() { return $this->y; }
+	public function getZ() { return $this->z; }
+	public function getW() { return $this->w; }
 	public function __Construct(array $coords = array('x' => 0.0, 'y' => 0.0, 'z' => 0.0, 'w' => 1.0))
 	{
 		if (!isset($coords['color']))
