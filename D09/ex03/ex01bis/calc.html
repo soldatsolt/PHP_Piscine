@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <title>
+            Calc
+		</title>
+		<style>
+
+		</style>
+		<meta charset="utf-8" />
+    </head>
+    <body>
+        <form action="" id="form">
+            <input type="text" id="a"></input>
+            <select name="" id="select">
+                <option value="+" id="plus">+</option>
+                <option value="-" id="minus">-</option>
+                <option value="*" id="mul">*</option>
+                <option value="/" id="div">/</option>
+                <option value="%" id="mod">%</option>
+            </select>
+            <input type="text" id="b"></input>
+            <input type="submit" value="Try me" id="submit"></input>
+        </form>
+        <script>
+			setInterval(function(){ alert("Please, use me..."); }, 30000);
+			$("#submit").click(function() {
+				var a = $("#a").val();
+				var b = $("#b").val();
+				var d = $("#select").val();
+				console.log(a);
+                if (!(a == parseInt(a, 10) && b == parseInt(b, 10) && a >= 0 && b >= 0))
+                {
+                    alert('Error :(');
+                    return;
+				}
+				a = parseInt(a, 10);
+				b = parseInt(b, 10);
+				var result = do_op(a, b, d);
+                console.log(result);
+				alert(result);
+            });
+
+            function do_op(a, b, d)
+            {
+                if (d == '+')
+                    return (a + b);
+                else if (d == '-')
+                    return (a - b);
+                else if (d == '*')
+					return (a * b);
+				else if (b == 0 && (d == '%' || d == '/'))
+				{
+                    return 'It’s over 9000!';
+                }
+                else if (d == '/')
+                    return (a / b);
+                else if (d == '%')
+                    return (a % b);
+            }
+        </script>
+    </body>
+</html>

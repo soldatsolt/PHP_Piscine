@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+			Balloon
+		</title>
+		<style>
+		#circle {
+			margin: 20vh auto;
+			width: 200px;
+			height: 200px;
+			background: red;
+			border-radius: 50%;
+			transition: 0.25s;
+		}
+		</style>
+		<meta charset="utf-8" />
+    </head>
+    <body>
+		<div onclick="ballon()" id="circle"></div>
+		<script type="text/javascript">
+			var size = 200;
+			var i = 10;
+			var c = 90000001;
+			const circle = document.getElementById("circle");
+
+			circle.addEventListener("mouseout", function( event ) {   
+				if (size > 200)
+				{
+					circle.style.width = size - 5 + 'px';
+					circle.style.height = size - 5 + 'px';
+					size = size - 5;
+				}
+				if (c % 3 == 0) {
+					circle.style.background = 'green';
+					c = c - 1;
+				}
+				else if (c % 3 == 1) {
+					circle.style.background = 'blue';
+					c = c - 1;
+				}
+				else if (c % 3 == 2) {
+					circle.style.background = 'red';
+					c = c - 1;
+				}
+				}, false);
+
+			function ballon(){
+				if(size <= 420){
+					circle.style.width = size + i + 'px';
+					circle.style.height = size + i + 'px';
+				}
+				else{
+					circle.style.width = 200 + 'px';
+					circle.style.height = 200 + 'px';
+					size = 200
+				}
+				if (c % 3 == 0) {
+					circle.style.background = 'red';
+					c = c + 1;
+				}
+				else if (c % 3 == 1) {
+					circle.style.background = 'green';
+					c = c + 1;
+				}
+				else if (c % 3 == 2) {
+					circle.style.background = 'blue';
+					c = c + 1;
+				}
+				size = size + i;
+			}
+		</script>
+    </body>
+</html>

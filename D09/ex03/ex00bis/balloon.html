@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <title>
+			Balloon
+		</title>
+		<style>
+		#circle {
+			margin: 20vh auto;
+			width: 200px;
+			height: 200px;
+			background: red;
+			border-radius: 50%;
+			transition: 0.25s;
+		}
+		</style>
+		<meta charset="utf-8" />
+    </head>
+    <body>
+		<div onclick="ballon()" id="circle"></div>
+		<script>
+			var size = 200;
+			var i = 10;
+			var c = 90000001;
+			const circle = document.getElementById("circle");
+
+			$("#circle").mouseleave(function() {   
+				if (size > 200)
+				{
+					$("#circle").css("width", size - 5 + 'px');
+					$("#circle").css("height", size - 5 + 'px');
+					size = size - 5;
+				}
+				if (c % 3 == 0) {
+					$("#circle").css("background", 'green');
+					c = c - 1;
+				}
+				else if (c % 3 == 1) {
+					$("#circle").css("background", 'blue');
+					c = c - 1;
+				}
+				else if (c % 3 == 2) {
+					$("#circle").css("background", 'red');
+					c = c - 1;
+				}
+				});
+
+			function ballon(){
+				if(size <= 420){
+					$("#circle").css("width", size + i + 'px');
+					$("#circle").css("height", size + i + 'px');
+				}
+				else{
+					$("#circle").css("width", 200 + 'px');
+					$("#circle").css("height", 200 + 'px');
+					size = 200
+				}
+				if (c % 3 == 0) {
+					$("#circle").css("background", 'red');
+					c = c + 1;
+				}
+				else if (c % 3 == 1) {
+					$("#circle").css("background", 'green');
+					c = c + 1;
+				}
+				else if (c % 3 == 2) {
+					$("#circle").css("background", 'blue');
+					c = c + 1;
+				}
+				size = size + i;
+			}
+		</script>
+    </body>
+</html>
